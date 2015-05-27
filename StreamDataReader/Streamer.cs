@@ -310,18 +310,18 @@ namespace FHTRUE.Bigdata.Streamer
         {
             var sinks = new List<Sink>();
             sinks.Add(new BlobStorage { 
-                Connection = "DefaultEndpointsProtocol=https;AccountName=teststorageaccountfh1;AccountKey=ramrGxXNbp7tdNnL8mF+Se2cwMdh+c4pSsKCdYcoYsvDrinrZw3aW7YVDzxoneZM6pBMJUGsM+8lxIeNkyN+AA==",
-                Name = "testhdinsightclusterfhtrue",
+                Connection = "",
+                Name = "testhdinsightcluster",
                 Type=SinkType.BlobStorage,
                 Backup = false,
                 Location = "fhtrue/data/gnip/{YEAR}/{MONTH}/{DAY}/working_0",
             });
             /*sinks.Add(new AzureServiceBusEventHub
             {
-                SendConnection = "Endpoint=sb://testeventhubfhtrue-ns.servicebus.windows.net/;SharedAccessKeyName=TestPolicy;SharedAccessKey=Fz9sFMXZoPZn10GDpeORa+OhcFGig0BgakZJWihJaeU=",
-                RootConnection = "Endpoint=sb://testeventhubfhtrue-ns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=glOUAnYBQZ71hAwkBcQK7v0fYPeE6cFatfKHs4f8/sU=",
-                Name = "testeventhubfhtrue",
-                Namespace = "testeventhubfhtrue-ns",
+                SendConnection = "",
+                RootConnection = "",
+                Name = "testeventhub",
+                Namespace = "testeventhub-ns",
                 Type = SinkType.AzureServiceBusEventHub,
                 Backup = true
             });*/
@@ -333,8 +333,8 @@ namespace FHTRUE.Bigdata.Streamer
                     EndPoint = "https://stream.gnip.com:443/accounts/fleishman/publishers/twitter/streams/track/prod.json?client=1",
                     StreamType = "TwitterGNIPPowerTrack",
                     StreamName = "PowerTrack(prod)",
-                    UserName = "vishal.goswami@fleishman.com",
-                    Password = "P@ssw0rd"
+                    UserName = "",
+                    Password = ""
                 },
                 Sinks = sinks,
                 Channel = new Channel { Batch = new Batch { Sized = false, Size = 10 }, MessageSize = 15 , Retry = 5, SleepTime = 30000}
